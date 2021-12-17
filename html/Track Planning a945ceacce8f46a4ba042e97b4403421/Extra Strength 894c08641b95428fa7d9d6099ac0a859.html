@@ -1,0 +1,662 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Extra Strength</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+}
+
+.simple-table-header {
+	background: rgb(247, 246, 243);
+	color: black;
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(145, 145, 142, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(187, 132, 108, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(215, 129, 58, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 148, 51, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(108, 155, 125, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(91, 151, 189, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(167, 130, 195, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(205, 116, 159, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(225, 111, 100, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(145, 145, 142, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(187, 132, 108, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(215, 129, 58, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 148, 51, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(108, 155, 125, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(91, 151, 189, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(167, 130, 195, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(205, 116, 159, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(225, 111, 100, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="894c0864-1b95-428f-a7d9-d6099ac0a859" class="page sans"><header><h1 class="page-title">Extra Strength</h1></header><div class="page-body"><h2 id="428aa897-a128-4575-a28d-8f7750b03666" class="">Strength exercises:</h2><h3 id="93cd8fea-f398-48f9-8846-b7bc3c3d1a6a" class="">Plyos &amp; Explosiveness</h3><ul id="160b16d8-5c50-4c4f-ac0a-bc9e75bf2c97" class="bulleted-list"><li style="list-style-type:disc">Percentage sprints</li></ul><ul id="314e9db5-dc87-4047-89ed-e950e0359de2" class="bulleted-list"><li style="list-style-type:disc">Build-up sprints</li></ul><ul id="70855fdc-b089-4d99-b3d1-2352f14a9bc9" class="bulleted-list"><li style="list-style-type:disc">Hill sprints</li></ul><ul id="2775d906-add5-4822-ac16-3fa4e5f376ba" class="bulleted-list"><li style="list-style-type:disc">Broad jumps</li></ul><ul id="7a51e2ba-b468-47ae-9de9-14ced6a38b71" class="bulleted-list"><li style="list-style-type:disc">Triple bunnies</li></ul><ul id="ad61ad08-f083-4e64-992e-17daa318ec47" class="bulleted-list"><li style="list-style-type:disc">Single leg hops</li></ul><ul id="383d4fd9-26e4-4075-a645-8d6ccfe7ae61" class="bulleted-list"><li style="list-style-type:disc">Single leg bounds</li></ul><ul id="501189ba-0f1c-4100-a4c9-97ae3c8bd867" class="bulleted-list"><li style="list-style-type:disc">Speed skaters</li></ul><ul id="9ed4c91c-8210-496f-90d6-63458daea84a" class="bulleted-list"><li style="list-style-type:disc">Tuck jumps</li></ul><ul id="4651306a-bbde-4b93-beac-1e4d64cdfa3e" class="bulleted-list"><li style="list-style-type:disc">Split lunge jumps</li></ul><ul id="51623783-579a-43da-8e1d-fbd4769235fc" class="bulleted-list"><li style="list-style-type:disc">Box jumps</li></ul><ul id="69962bf0-0018-4b68-97e9-8bf77b571a6a" class="bulleted-list"><li style="list-style-type:disc">Vertical jumps</li></ul><ul id="69161016-9ccc-42d9-aa4a-46943cfd5644" class="bulleted-list"><li style="list-style-type:disc">Med ball (to wall or partner)<ul id="0ef49e6d-f2e4-4fbb-a48f-ab35ae0e71b0" class="bulleted-list"><li style="list-style-type:circle">Chest slam</li></ul><ul id="29776f7a-ce4e-40e2-8866-41b0f24686ff" class="bulleted-list"><li style="list-style-type:circle">Bench press slam</li></ul><ul id="a5e13bcd-8491-42c0-95d7-9ca1c362c6c0" class="bulleted-list"><li style="list-style-type:circle">Single side rotational slam</li></ul><ul id="6dd10200-f1a0-466b-a0f3-f449a9778783" class="bulleted-list"><li style="list-style-type:circle">Alternating side rotational slam</li></ul><ul id="74eb3c78-fdd3-4fc3-98f8-3687c2fa02bc" class="bulleted-list"><li style="list-style-type:circle">Half-kneeling side rotational slam</li></ul><ul id="ec377f98-e59a-4c77-a6a2-0c64e97994d7" class="bulleted-list"><li style="list-style-type:circle">Overhead throw</li></ul><ul id="4364e13d-8aea-4b8b-8205-6dfcff8fed66" class="bulleted-list"><li style="list-style-type:circle">Sit up &amp; throw</li></ul><ul id="ed897928-706e-4c01-89a2-6f76f614c9eb" class="bulleted-list"><li style="list-style-type:circle">Russian twist &amp; throw</li></ul><ul id="8b026be7-a2db-4bee-831d-420f3bfb7683" class="bulleted-list"><li style="list-style-type:circle">Squat to throw</li></ul><ul id="a54c2ec6-df00-4901-923f-dcd89b5ddfab" class="bulleted-list"><li style="list-style-type:circle">Slam</li></ul><ul id="9daf1814-3d00-4143-83ca-aa75b2a4fe02" class="bulleted-list"><li style="list-style-type:circle">Overhead slam</li></ul></li></ul><p id="58df4476-8651-434e-8f05-3fd48b0d8f6d" class="">
+</p><h3 id="2d61a135-067b-41b3-8b25-334827518f65" class="">Med ball general strength circuit</h3><ul id="dc73ee9a-675b-40bc-b9e6-9a76d50c9867" class="bulleted-list"><li style="list-style-type:disc">10x chest pass</li></ul><ul id="4aa53fc3-490d-486d-8352-2568e389692c" class="bulleted-list"><li style="list-style-type:disc">10x hip pass (each hip)</li></ul><ul id="0284f587-005f-4e66-8c7e-0bc5ddb9caaf" class="bulleted-list"><li style="list-style-type:disc">10x clockwise circle squat</li></ul><ul id="f629a9e5-b672-4308-b2df-bcbe550bb6bb" class="bulleted-list"><li style="list-style-type:disc">10x counter-clockwise circle squat</li></ul><ul id="257d0ae6-82cd-4321-9ba1-04f5e0dbd305" class="bulleted-list"><li style="list-style-type:disc">10x good mornings (w/ med ball)</li></ul><ul id="20d26da6-8a77-4554-a53f-d7ea6ccf60ae" class="bulleted-list"><li style="list-style-type:disc">20x machine guns (each side)</li></ul><ul id="24662d2b-c02e-4855-acec-d3c395e7dc16" class="bulleted-list"><li style="list-style-type:disc">20x sit-ups med ball throws</li></ul><ul id="e6fb1ca7-ce0f-4d7e-8b4c-90499e51694c" class="bulleted-list"><li style="list-style-type:disc">20x seated hip pass (against wall or to partner, each hip)</li></ul><ul id="6c8c97dd-c7fc-4f7f-a48d-4a6031d861b9" class="bulleted-list"><li style="list-style-type:disc">20x v-sit sit-up (middle)</li></ul><ul id="ceb48fd5-0c1a-4d5b-8641-780168ec225a" class="bulleted-list"><li style="list-style-type:disc">20x v-sit sit-up (left)</li></ul><ul id="773bf977-f306-4a6f-b56a-9a285d483bae" class="bulleted-list"><li style="list-style-type:disc">20x v-sit sit-up (right)</li></ul><ul id="68fd743a-8b31-4d8a-aa41-fe4b054bc765" class="bulleted-list"><li style="list-style-type:disc">10x superman head circles (clockwise)</li></ul><ul id="dde18c35-401b-4c9d-9cf8-0a14204a025e" class="bulleted-list"><li style="list-style-type:disc">10x superman head circles (counter-clockwise)</li></ul><ul id="c44d4a10-d081-446b-9746-72ec51156361" class="bulleted-list"><li style="list-style-type:disc">10x superman behind the head</li></ul><ul id="96b9ae21-9bcf-4b72-ac00-714119f2e993" class="bulleted-list"><li style="list-style-type:disc">10x superman pushing away from face</li></ul><ul id="b0b90c7c-18d0-4073-9ef3-aec9b0ff348f" class="bulleted-list"><li style="list-style-type:disc">10x donkey kicks</li></ul><ul id="27d534b4-566c-48b1-90ad-325c260191e3" class="bulleted-list"><li style="list-style-type:disc">10x fire hydrants</li></ul><ul id="659315da-9220-4247-be91-61e2a814232a" class="bulleted-list"><li style="list-style-type:disc">20x pushups</li></ul><p id="6ccc041d-fffe-44e7-8809-06dcf69515a8" class="">
+</p><h3 id="ad27c1bb-3467-4866-b700-dec28fbb5c90" class="">Ab Circuit #1</h3><ul id="12b4c9d5-356f-44f8-af67-3a994bf1ef4d" class="bulleted-list"><li style="list-style-type:disc">Supine sit-ups</li></ul><ul id="0fbc2ec4-d122-42bc-a935-bdf5a50c8912" class="bulleted-list"><li style="list-style-type:disc">Suit cases</li></ul><ul id="b6b69158-6b5b-4111-815d-fe241ca50c9e" class="bulleted-list"><li style="list-style-type:disc">Elbow-to-knee (right)</li></ul><ul id="748a6ea2-906c-44ff-bdcb-62ef00da6349" class="bulleted-list"><li style="list-style-type:disc">Elbow-to-knee (left)</li></ul><ul id="4bef7665-4491-4faa-93ec-230431c408ee" class="bulleted-list"><li style="list-style-type:disc">Sitting leg raises</li></ul><ul id="6fa85f38-45d1-4472-b27c-0d6e7aa13964" class="bulleted-list"><li style="list-style-type:disc">Bicycles</li></ul><ul id="d68e9551-7879-4c20-9d75-9549bf3c66ce" class="bulleted-list"><li style="list-style-type:disc">Lean Backs</li></ul><ul id="86a52d1e-899b-4a75-ad2c-4b1eb8176b65" class="bulleted-list"><li style="list-style-type:disc">Single leg raises (left leg)</li></ul><ul id="254b4a52-5895-4800-b6bd-35c04414de62" class="bulleted-list"><li style="list-style-type:disc">Single leg raises (right leg)</li></ul><p id="5aa861d4-994e-4b6f-b34c-83157172d915" class="">
+</p><h3 id="8f28ea32-7146-431c-be5d-da359ca75f21" class="">Ab Circuit #2</h3><p id="2f773ac4-956d-4329-b924-fbf8c23c6346" class="">
+</p><p id="fdf63f95-4197-4fb3-8283-7ff6b9ffd817" class="">
+</p><h2 id="45c843e4-0e43-4b01-9402-8f134333b76d" class="">Supplementary weight room exercises:</h2><h3 id="2bda038f-9521-49bd-85a9-0201c2ecd2ef" class="">Barbell</h3><ul id="f21d088d-15b7-4048-997f-0a0f7dbc92f8" class="bulleted-list"><li style="list-style-type:disc">Shrugs</li></ul><ul id="7e3b806c-7c57-4c5b-8665-3827276641ef" class="bulleted-list"><li style="list-style-type:disc">Hip thrust</li></ul><ul id="ee8c6f7c-b6b1-4178-a88e-a98150c89031" class="bulleted-list"><li style="list-style-type:disc">Overhead strict press</li></ul><ul id="58538f08-fe22-4cd0-a1a1-37732d2740ab" class="bulleted-list"><li style="list-style-type:disc">Split squat</li></ul><ul id="5cabed33-a0a8-4ee9-a8ca-0016e732c61b" class="bulleted-list"><li style="list-style-type:disc">Single-leg lunge</li></ul><ul id="b9b0b5e7-63fb-4dc9-91f8-535e655eb0b5" class="bulleted-list"><li style="list-style-type:disc">RDL</li></ul><ul id="40f4b1c0-71cf-4011-b876-7c70145a2cc3" class="bulleted-list"><li style="list-style-type:disc">Snatch balance</li></ul><ul id="0043d3ef-09a6-47dc-a234-23dfde5d8226" class="bulleted-list"><li style="list-style-type:disc">Overhead squat</li></ul><ul id="a230ba88-5ad0-4398-9609-8840f91d21ae" class="bulleted-list"><li style="list-style-type:disc">Muscle clean</li></ul><ul id="45c45fa7-aca1-4064-be3e-97b5fc0e062a" class="bulleted-list"><li style="list-style-type:disc">Muscle snatch</li></ul><ul id="940a6b2f-a7e1-4cb8-99ac-03bdcd195ff0" class="bulleted-list"><li style="list-style-type:disc">Thrusters</li></ul><h3 id="02e7b029-a5ba-4e2c-ad94-5b03386c926f" class="">Cables:</h3><ul id="57b5fdf8-be6d-468a-a30c-fae3f7b3ee4f" class="bulleted-list"><li style="list-style-type:disc">Palloff press<ul id="d694072f-19dd-4c6f-bb7a-dafc5706a9a4" class="bulleted-list"><li style="list-style-type:circle">w/ hold </li></ul><ul id="3d24eae9-6744-4720-9dc8-0b1542604a66" class="bulleted-list"><li style="list-style-type:circle">w/ rotatation </li></ul></li></ul><ul id="4e2b8495-7b83-4630-9a89-3f44ef6002ba" class="bulleted-list"><li style="list-style-type:disc">Tricep pulldowns</li></ul><ul id="c5ee65aa-ba07-4440-8966-7b08b75e21fc" class="bulleted-list"><li style="list-style-type:disc">Seated cable row</li></ul><ul id="e425735f-61f5-4d52-861c-be6ec279aec0" class="bulleted-list"><li style="list-style-type:disc">Pulldown</li></ul><ul id="ad5ab309-6408-471b-a327-629955c5dca1" class="bulleted-list"><li style="list-style-type:disc">1/2 kneeling wood chops</li></ul><ul id="7ba6480d-66f5-4af8-ae0b-d76262bf58fa" class="bulleted-list"><li style="list-style-type:disc">Shrugs</li></ul><ul id="b644c5c6-e3e4-4faf-9770-0b84fad55279" class="bulleted-list"><li style="list-style-type:disc">Single-arm lateral raise</li></ul><ul id="a03ae40b-f63c-4d1f-86af-1ac6ea68887b" class="bulleted-list"><li style="list-style-type:disc">Pull-through</li></ul><ul id="4ed276f5-56b2-4c55-ae35-e2c848d0ba5c" class="bulleted-list"><li style="list-style-type:disc">Internal/external rotator cuff </li></ul><ul id="a5e5a020-6df5-46a0-afaa-097370833ef7" class="bulleted-list"><li style="list-style-type:disc">Pec fly</li></ul><ul id="41cf8e11-1e6a-4b92-b0d3-3fa86ea9d08f" class="bulleted-list"><li style="list-style-type:disc">Bicep curl</li></ul><h3 id="465d5f8b-3dd7-4910-94ec-eb199275a975" class="">Dumbbells &amp; Kettlebells:</h3><ul id="cbeb4197-04b9-4882-a421-52d499f89edf" class="bulleted-list"><li style="list-style-type:disc">Farmer holds</li></ul><ul id="94ac2d96-6082-47eb-8f62-a6c5bb5cfd44" class="bulleted-list"><li style="list-style-type:disc">Farmer caries</li></ul><ul id="447f5f3f-c205-422c-abf2-507379c5b3c1" class="bulleted-list"><li style="list-style-type:disc">Bicep curls</li></ul><ul id="761a2e4d-3941-4c9e-bcf5-db87c93d3960" class="bulleted-list"><li style="list-style-type:disc">Tricep extensions (standing or lying)</li></ul><ul id="f3a71076-f95f-4a55-9b29-841e6bdf6c26" class="bulleted-list"><li style="list-style-type:disc">Shrugs</li></ul><ul id="cad1d984-960c-445e-8376-939c96e0916b" class="bulleted-list"><li style="list-style-type:disc">Kettlebell swings</li></ul><ul id="ba4291c4-8853-491e-b1b3-f8e136274f65" class="bulleted-list"><li style="list-style-type:disc">Waitress hold</li></ul><ul id="41be11ea-e05d-4afd-87bf-f19d76315e92" class="bulleted-list"><li style="list-style-type:disc">Waitress carry</li></ul><ul id="dec60650-efdd-4c4a-874f-abb4af68bd5b" class="bulleted-list"><li style="list-style-type:disc">Goblet squat</li></ul><ul id="f9a85fc6-3c4a-47d2-9d89-d7ed70440d9c" class="bulleted-list"><li style="list-style-type:disc">Side lunge</li></ul><ul id="bed88350-5488-46d7-9be6-ffb26e4f3bcb" class="bulleted-list"><li style="list-style-type:disc">1/2 kneeling overhead press</li></ul><ul id="8ad65c6a-721a-4e6a-8650-74c88df0b49d" class="bulleted-list"><li style="list-style-type:disc">Thrusters</li></ul><h3 id="29f8c184-870c-4292-ac3e-5847ba5490c0" class="">Plates:</h3><ul id="da672c3d-9a35-4fe1-8f28-b5bd1cb44e24" class="bulleted-list"><li style="list-style-type:disc">Plate twists</li></ul><ul id="d4bdb6a4-b000-419f-90d6-9dc38a2f45d8" class="bulleted-list"><li style="list-style-type:disc">Walking plate twists</li></ul><ul id="a2aba0e7-3ca7-4e06-a9fd-25ba0666f9f3" class="bulleted-list"><li style="list-style-type:disc">Wall sit</li></ul><p id="9b08e4d0-aa38-40f3-a15b-3d3d1934dd38" class="">
+</p><h3 id="8791f824-2f0b-4f99-85a2-31b91f98eb9f" class="">Bodyweight:</h3><ul id="828e41fa-86ce-4eb9-b2e4-8fad35a23667" class="bulleted-list"><li style="list-style-type:disc">Tricep dips</li></ul><ul id="3f519e2c-665d-43b7-a756-42509f14edeb" class="bulleted-list"><li style="list-style-type:disc">Step ups</li></ul><ul id="b7f84ab6-8735-4018-a42a-06b4bdc8289d" class="bulleted-list"><li style="list-style-type:disc">Calf raises (both legs or single leg)</li></ul><ul id="68b62693-d107-4dac-831b-0899f47f0b98" class="bulleted-list"><li style="list-style-type:disc">Pushups</li></ul><ul id="d4c168c3-c648-4f4b-8c30-19fcf194ab51" class="bulleted-list"><li style="list-style-type:disc">Scap pushups </li></ul><ul id="71f2f4bb-f588-4c54-b34e-3256d9299e01" class="bulleted-list"><li style="list-style-type:disc">Shoulder taps</li></ul><ul id="324af605-62ae-48f7-b083-506397b07e1a" class="bulleted-list"><li style="list-style-type:disc"></li></ul></div></article></body></html>

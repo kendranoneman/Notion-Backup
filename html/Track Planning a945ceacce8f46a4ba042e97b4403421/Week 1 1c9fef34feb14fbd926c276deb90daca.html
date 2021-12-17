@@ -1,0 +1,660 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Week 1</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+}
+
+.simple-table-header {
+	background: rgb(247, 246, 243);
+	color: black;
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(145, 145, 142, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(187, 132, 108, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(215, 129, 58, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 148, 51, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(108, 155, 125, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(91, 151, 189, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(167, 130, 195, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(205, 116, 159, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(225, 111, 100, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(145, 145, 142, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(187, 132, 108, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(215, 129, 58, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 148, 51, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(108, 155, 125, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(91, 151, 189, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(167, 130, 195, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(205, 116, 159, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(225, 111, 100, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1c9fef34-feb1-4fbd-926c-276deb90daca" class="page sans"><header><h1 class="page-title">Week 1</h1></header><div class="page-body"><h2 id="7338d74e-3229-485b-8413-7fd14e541af9" class="">Day 1 (Heavy Hammer + Sprints)</h2><p id="f1bd4bb9-8c05-4096-80ee-278d4db5d2dd" class=""><em>What you need: heavy hammer, comp hammer</em></p><h3 id="ad26381f-d1f0-415c-aa57-0c381c874616" class="">Warmup </h3><ul id="9b4d04a6-4ef9-4030-9ec2-f526d524e811" class="bulleted-list"><li style="list-style-type:disc">General warmup</li></ul><ul id="4b45a4c8-70fb-4801-9ce8-32619c406ba9" class="bulleted-list"><li style="list-style-type:disc">Hurdle mobility</li></ul><ul id="ee9cf431-ae6d-436f-b296-3d0c896b64bb" class="bulleted-list"><li style="list-style-type:disc">Heavy winds —&gt; 2x10 ea</li></ul><ul id="89a71e6c-7b64-4640-8dd6-fb7efa6f31d6" class="bulleted-list"><li style="list-style-type:disc">Walking winds —&gt; 2x10 ea</li></ul><h3 id="eb3f95ce-b5be-4aa3-af4a-1f4277a7e04a" class="">Throws (Heavy) <mark class="highlight-purple">24</mark></h3><ul id="14e622c3-9dab-44fa-9cb4-e9fc4d1c3d0d" class="bulleted-list"><li style="list-style-type:disc">5-turns (w/ heavy) —&gt; 8x</li></ul><ul id="0b9d7e18-5339-49f4-b24c-b6c9befe73d4" class="bulleted-list"><li style="list-style-type:disc">4-turns (w/ heavy) —&gt; 8x</li></ul><ul id="3433ddc4-a5f8-4403-a6a1-5627ac0425e5" class="bulleted-list"><li style="list-style-type:disc">4-turns (comp) —&gt; 8x </li></ul><h3 id="dfb4cdb5-d927-4825-88b8-3c364d5b8990" class="">Supplementary</h3><ul id="119abf53-7111-4994-a3d3-b733b308400d" class="bulleted-list"><li style="list-style-type:disc">Sprints —&gt; 8x30m</li></ul><p id="d841acb1-4483-4c57-b6b8-f86836d29bed" class="">
+</p><h2 id="554763e8-8acc-4466-aaa3-874f122e80ed" class="">Day 2 (Weight + Med Ball)</h2><p id="d1d36b94-78cc-495d-a0e6-b3361176cdb1" class=""><em>What you need: weight, extra handle, water jug, medicine ball</em></p><h3 id="5ef847d9-0726-4116-82e2-4c60a1427d19" class="">Warmup </h3><ul id="56b4926e-b176-4c4b-bba4-f1c5d5c4c45b" class="bulleted-list"><li style="list-style-type:disc">General warmup</li></ul><ul id="d8da18e4-0d1d-45ab-887a-d76a9b18dd1e" class="bulleted-list"><li style="list-style-type:disc">OH/UH shot toss —&gt; 8x ea</li></ul><ul id="b8e9ca73-680a-44f5-a2e3-a5a4666ced15" class="bulleted-list"><li style="list-style-type:disc">Stick turns + squat (OH/front/behind) —&gt; 2x ea</li></ul><ul id="27c12aaf-8ca5-4886-9ece-4e79041684a7" class="bulleted-list"><li style="list-style-type:disc">Water jug twists —&gt; 2x10 ea</li></ul><h3 id="938d117e-26e8-4be3-a38b-24ce558e3ab9" class="">Throws (Weight) <mark class="highlight-purple">16</mark></h3><ul id="cab44e72-976c-4f31-92d6-9841882aae0f" class="bulleted-list"><li style="list-style-type:disc">Fulls (w/ long weight) —&gt; 8x</li></ul><ul id="7c10287d-bd04-4c09-b06b-b3aa2fd837ca" class="bulleted-list"><li style="list-style-type:disc">Fulls (w/ weight) —&gt; 8x</li></ul><h3 id="8306f851-e06e-44eb-bc51-5f56b3d74f70" class="">Supplementary</h3><ul id="be2ed6a5-661c-4791-bd9e-cf8e112678b6" class="bulleted-list"><li style="list-style-type:disc">Med ball general circuit —&gt; 1x</li></ul><p id="08447d76-e138-4a42-8800-a2edcc24e2d5" class="">
+</p><h2 id="29f764ca-32a8-46ee-bff4-90b005bc8263" class="">Day 3 (Comp Hammer + Plyos)</h2><p id="54ec5aa1-e5ee-4173-a97c-e7231bcfc0ef" class=""><em>What you need: comp hammer, </em></p><h3 id="b8d5dc11-079d-4be9-bf1f-d806b8a67256" class="">Warmup </h3><ul id="d4befd8f-30c5-4319-8d05-ea8a35201e44" class="bulleted-list"><li style="list-style-type:disc">General warmup</li></ul><ul id="0a29bc9b-e2ad-414c-9426-f82b8880879f" class="bulleted-list"><li style="list-style-type:disc">Pilates + ladder </li></ul><ul id="2d0f6916-6ea8-412d-ad03-aba9370be0d8" class="bulleted-list"><li style="list-style-type:disc">Progressive wind + turn (1-turn, 2-turn, etc...) —&gt; 4x</li></ul><ul id="c7ef32b4-cccb-40cf-9973-e4ef82cff6ba" class="bulleted-list"><li style="list-style-type:disc">Right-hand turns —&gt; 4x</li></ul><h3 id="a585d0ef-ecd6-4759-b7b6-dd04dc20225b" class="">Throws (Comp Hammer)<mark class="highlight-purple"> 24</mark></h3><ul id="54fd59fc-96e8-4dfe-901c-9322d8144de3" class="bulleted-list"><li style="list-style-type:disc">6-turns (w/ comp) —&gt; 6x</li></ul><ul id="615dd43b-6105-41f6-b5d6-ce0cf6a8d8e2" class="bulleted-list"><li style="list-style-type:disc">5-turns (w/ comp) —&gt; 6x</li></ul><ul id="87702306-b5c7-43a5-91e5-1334f5afccc1" class="bulleted-list"><li style="list-style-type:disc">75% 4-turns (w/ comp) —&gt; 2x</li></ul><ul id="8774d0d0-b6ca-48b9-8413-0072b98990a8" class="bulleted-list"><li style="list-style-type:disc">4-turns (w/ comp) —&gt; 10x</li></ul><h3 id="8467246a-2ef9-4cf3-92f6-0bac8ea517f2" class="">Supplementary</h3><ul id="9273de40-7768-43d4-9b3c-6c5c47323067" class="bulleted-list"><li style="list-style-type:disc">Plyos circuit —&gt; 1x</li></ul><p id="d7415a19-f7e1-440f-ba2d-37b4d8389b68" class="">
+</p><h2 id="44ae5cd1-abd5-4d38-8171-36b410841fc5" class="">Day 4 (Short Hammer + Comp Hammer+ Plyos)</h2><h3 id="5e1c854c-d13f-44ae-8432-3e76f73732fb" class="">Warmup </h3><ul id="783edc99-a5e7-4560-b994-6d100942cd89" class="bulleted-list"><li style="list-style-type:disc">General warmup</li></ul><ul id="19de0169-7921-46a2-acb2-faf3f5d39539" class="bulleted-list"><li style="list-style-type:disc">Pilates + ladder </li></ul><ul id="d5a2f9c7-4dba-43cd-8d3f-375a83999f19" class="bulleted-list"><li style="list-style-type:disc">Wind &amp; release (long weight) —&gt; 4x</li></ul><ul id="0c401736-9d57-4e51-9aff-20c6f3d1ae59" class="bulleted-list"><li style="list-style-type:disc">Progressive wind + turn (1-turn, 2-turn, etc...) —&gt; 4x</li></ul><ul id="cbf2b897-f55d-4ad3-a832-e047b0ae56a4" class="bulleted-list"><li style="list-style-type:disc">Right-hand turns —&gt; 4x</li></ul><h3 id="2455b609-b5d1-47ce-9cc4-b7d4fa214a4f" class="">Throws (Short Hammer + )</h3><ul id="a173008e-2e12-4a10-9fdf-984476f1a5e0" class="bulleted-list"><li style="list-style-type:disc">6-turns (w/ comp) —&gt; 6x</li></ul><ul id="316b2d31-52fe-434f-a1f7-4baecb4dfea6" class="bulleted-list"><li style="list-style-type:disc">5-turns (w/ comp) —&gt; 6x</li></ul><ul id="458a0e5a-dfc3-465c-9233-8df3129c8dbf" class="bulleted-list"><li style="list-style-type:disc">75% 4-turns (w/ comp) —&gt; 2x</li></ul><ul id="ce62fbbc-2494-40c5-96cc-9e53d4e0abf9" class="bulleted-list"><li style="list-style-type:disc">4-turns (w/ comp) —&gt; 10x</li></ul><h3 id="d8eadc78-ad10-4d18-85f0-6dcd7e93e5cc" class="">Supplementary</h3><ul id="ce01c296-36da-4e9d-8120-17f17ddcbed2" class="bulleted-list"><li style="list-style-type:disc">Plyos circuit —&gt; 1x</li></ul><p id="72b9b445-484d-4d6e-ad2b-26eb9dcdf2f2" class="">
+</p><h2 id="97a2ec16-fa90-4919-a141-5a9d86834370" class="">Day 4 (Just throw the damn thing)</h2><h3 id="95386487-9842-4b37-8eee-2b7449275722" class="">Warmup </h3><ul id="d4cf4955-3d7b-43cf-a039-ca7593dc160b" class="bulleted-list"><li style="list-style-type:disc">General warmup</li></ul><ul id="935ff20f-eff8-4268-949a-20ebeee711af" class="bulleted-list"><li style="list-style-type:disc">Pilates + ladder </li></ul><ul id="ea439245-ea33-4669-a787-61d1ce380440" class="bulleted-list"><li style="list-style-type:disc">Wind &amp; release (long weight) —&gt; 4x</li></ul><ul id="00d710cd-eb0c-42d1-bfae-e883db95bc57" class="bulleted-list"><li style="list-style-type:disc">Progressive wind + turn (1-turn, 2-turn, etc...) —&gt; 4x</li></ul><ul id="0ca219f3-cf4c-45e6-a2cf-5b79ad0e6b72" class="bulleted-list"><li style="list-style-type:disc">Right-hand turns —&gt; 4x</li></ul><h3 id="a8e68157-33e0-46cb-bfb4-1c9cdf1b5880" class="">Throws (Short Hammer + )</h3><ul id="df6c8e25-8dc9-4760-a47a-9b6b83aaaad2" class="bulleted-list"><li style="list-style-type:disc">6-turns (w/ comp) —&gt; 6x</li></ul><ul id="c3814dd4-4e95-4c29-b3cb-2731d0f83fcf" class="bulleted-list"><li style="list-style-type:disc">5-turns (w/ comp) —&gt; 6x</li></ul><ul id="acd138b0-e196-44af-8aed-cb16ed66d679" class="bulleted-list"><li style="list-style-type:disc">75% 4-turns (w/ comp) —&gt; 2x</li></ul><ul id="162b1cb4-5e95-4489-8f71-f8a0ed44d0da" class="bulleted-list"><li style="list-style-type:disc">4-turns (w/ comp) —&gt; 10x</li></ul><h3 id="428513ea-e520-40f7-b05a-714d04182e86" class="">Supplementary</h3><ul id="a3dd1d97-4e05-406e-80e4-d8344b5dbd06" class="bulleted-list"><li style="list-style-type:disc">Plyos circuit —&gt; 1x</li></ul></div></article></body></html>
