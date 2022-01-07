@@ -5,7 +5,9 @@ Status: Done 🙌
 
 Abstract format (1 paragraph):
 
-$$\text{ Conference Abstract } = \text{topic } + \text{ title } + \text{ motivation } + \text{ problem statement } + \text{ approach } + \text{ results } + \text{ conclusions }$$
+$$
+\text{ Conference Abstract } = \text{topic } + \text{ title } + \text{ motivation } + \text{ problem statement } + \text{ approach } + \text{ results } + \text{ conclusions }
+$$
 
 1. Topic 
     - MT population activity in response to brief motion pulses

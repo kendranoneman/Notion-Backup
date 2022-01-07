@@ -2,7 +2,7 @@
 
 Date Created: November 22, 2021 1:05 PM
 Due Date: December 30, 2021
-Status: To Do
+Status: Done 🙌
 
 - PNC/PSN 1st Meeting
 - MSE girls chat
