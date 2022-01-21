@@ -4,6 +4,6 @@
 Class Date: 09/09/2021
 Course: Cog Neuro
 Link: Moore_06.pdf
-Status: Next Class
+Status: Past Course
 Type: Paper
 Unit: Attention
